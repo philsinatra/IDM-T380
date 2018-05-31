@@ -1,0 +1,23 @@
+html {
+  font-size: 100%;
+}
+
+body {
+  background-color: $cs-black;
+  color: $cs-white;
+}
+
+p {
+  line-height: 1.5;
+}
+
+.example {
+  display: flex;
+  transition: all 0.5s;
+  user-select: none;
+  background: linear-gradient(to bottom, white, black);
+}
+
+.grid {
+  display: grid;
+}
