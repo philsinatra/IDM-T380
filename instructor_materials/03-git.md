@@ -1064,6 +1064,17 @@ git push origin master
 
 ---
 
+## GitHub Project Management
+
+- users
+- milestones
+- issues
+- labels
+- scrum board
+- wiki
+
+---
+
 Concepts, verbiage and examples are from "Git For Humans" By David Demaree
 
 [https://abookapart.com/products/git-for-humans](https://abookapart.com/products/git-for-humans)

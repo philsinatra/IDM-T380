@@ -37,6 +37,8 @@ npm install --save-dev gulp-eslint
 
 ### JavaScript Lint
 
+There are many linting options available. We'll be using ESLint, which requires a configuration file that tells the linter what rules to follow.
+
 ```javascript
 const gulp = require('gulp');
 const eslint = require('gulp-eslint');

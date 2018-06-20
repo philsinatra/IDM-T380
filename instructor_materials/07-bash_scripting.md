@@ -146,7 +146,7 @@ ls -l /etc
 
 ^ Command line arguments are commonly used and easy to work with so they are a good place to start.
 
-^ When we run a program on the command line you would be familiar with supplying arguments after it to control its behaviour. For instance we could run the command `ls -l /etc`. `-l` and `/etc` are both command line arguments to the command `ls`.
+^ When we run a program on the command line you would be familiar with supplying arguments after it to control its behavior. For instance we could run the command `ls -l /etc`. `-l` and `/etc` are both command line arguments to the command `ls`.
 
 ---
 
@@ -161,11 +161,11 @@ echo Details for $2
 ls -l $2
 ```
 
-^ Line 3: run the copy command with the first comman line argument as the source and the second command line argument as the destination.
+^ Line 3: run the copy command with the first command line argument as the source and the second command line argument as the destination.
 
 ^ Line 5: run the command `echo` to print a message
 
-^ Line 6: after the copy is complete, run the `ls` command for the destination to verify it worked. 
+^ Line 6: after the copy is complete, run the `ls` command for the destination to verify it worked.
 
 ---
 
@@ -177,4 +177,489 @@ Details for ./results.data
 -rw-r--r-- results.data
 ```
 
-https://ryanstutorials.net/bash-scripting-tutorial/bash-variables.php
+## Setting Variables
+
+```bash
+variable=value
+```
+
+^ There are a few ways variables may be set, but the basic format follows this pattern. Formatting is important - note there is no space on either side of the equals sign. We also leave off the dollar sign at the beginning of the variable name when setting it.
+
+^ Variable names can be uppercase, lowercase or a mixture of both. Bash is case sensitive so whenever you refer to a variable you must be consistent about the casing.
+
+---
+
+### Setting Variables - Example
+
+```bash
+#!/bin/bash
+myvariable=Hello
+anothervar=Fred
+
+echo $myvariable $anothervar
+echo
+
+sampledir=/etc
+
+ls $sampledir
+```
+
+---
+
+## Quotes
+
+- single quotes: 'treat every character literally'
+- double quotes: "allow substitution"
+
+^ In the previous example, all of the values for our variables were single words. When we want variables to store more complex values, we need to use quotes. Remember, under normal circumstances, Bash uses a spce to determine separate items.
+
+^ When we enclose content in quotes, we're indicating to Bash that the contents should be considered as a single item. You can use single or double quotes.
+
+^ _(click)_ Single quotes will treat every character literally
+
+^ _(click)_ Double quotes will allow you to do substitution, which means we can include variables within the setting of the value.
+
+---
+
+### Quotes - Example
+
+```bash
+$ myvar='Hello World'
+$ echo $myvar
+Hello World
+
+$ newvar="More $myvar"
+$ echo $newvar
+More Hello World
+
+$ newvar='More $myvar'
+$ echo $newvar
+More $myvar
+```
+
+---
+
+## Exporting Variables
+
+```bash
+var1=foo
+var2=bar
+
+export var1
+
+./script2.sh
+```
+
+^ Remember variable scope - the idea is that variables are limited to the process they were created in. It is possible that a script may run another script as one of its commands. If we want the variable to be available to the second script then we need to export the variable.
+
+---
+
+## Input
+
+^ Next, let's look at ways to provide information to a script.
+
+---
+
+### Ask For Input
+
+```bash
+echo Hello, who am I talking to?
+
+read varname
+
+echo It\'s nice to meet you $varname
+```
+
+^ The `read` command will ask the user for input and save the user's response into the variable `varname`
+
+---
+
+### Read More
+
+```bash
+read - p 'Username: ' uservar
+read -sp 'Password: ' passvar
+echo Thank you $uservar, we have your login details
+```
+
+^ You are able to alter the behavior of read with a variety of command line options. Two commonly used options however are `-p` which allows you to specify a prompt and `-s` which makes the input silent. This can make it easy to ask for a username and password combination.
+
+---
+
+## If Statements
+
+```txt
+if [ <some test> ]
+then
+  <commands>
+fi
+```
+
+^ If statements work in Bash scripting as you would expect. If statements allow us to make decisions in our Bash scripts. They allow us to decide whether or not to run a piece of code based upon conditions that we may set. If statements, combined with loops allow us to make much more complex scripts which may solve larger tasks.
+
+^ Anything between *then* and *fi* (if backwards) will be executed only if the test is true.
+
+---
+
+### If Statement Example
+
+```bash
+if [ $1 -gt 100 ]
+then
+  echo Hey that\s a large number
+  pwd
+fi
+
+date
+```
+
+---
+
+### Indenting
+
+^ You'll notice that in the if statement above we indented the commands that were run if the statement was true. This is referred to as indenting and is an important part of writing good, clean code (in any language, not just Bash scripts). The aim is to improve readability and make it harder for us to make simple, silly mistakes. There aren't any rules regarding indenting in Bash so you may indent or not indent however you like and your scripts will still run exactly the same. I would highly recommend you do indent your code however (especially as your scripts get larger) otherwise you will find it increasingly difficult to see the structure in your scripts.
+
+---
+
+## If Else
+
+```bash
+if [ $# -eq 1 ]
+then
+  nl $1
+else
+  nl /dev/stdin
+fi
+```
+
+---
+
+## If Else If
+
+```bash
+if [ $1 -ge 18 ]
+then
+  echo You may go to the party.
+elif [ $2 == 'yes' ]
+then
+  echo You may go to the party but be back before midnight.
+else
+  echo You may not go to the party.
+fi
+```
+
+---
+
+## Boolean Operators
+
+```bash
+if [ -r $1 ] && [ -s $1 ]
+then
+
+if [ -r $1 ] || [ -s $1 ]
+then
+```
+
+---
+
+## Case Statements
+
+```bash
+case $1 in
+  start)
+    echo starting
+    ;;
+  stop)
+    echo stoping
+    ;;
+  restart)
+    echo restarting
+    ;;
+  *)
+    echo don\'t know
+    ;;
+esac
+```
+
+---
+
+## While Loops
+
+```text
+while [ <some text> ]
+do
+  <commands>
+done
+```
+
+^ One of the easiest loops to work with is `while` loops. While an expression is true, keep executing these lines of code.
+
+---
+
+## While Loops - Example
+
+```bash
+counter=1
+while [ $counter -le 10 ]
+do
+  echo $counter
+  ((counter++))
+done
+```
+
+---
+
+## Until Loops
+
+```bash
+counter=1
+until [ $counter -gt 10 ]
+do
+  echo $counter
+  ((counter++))
+done
+```
+
+^ The `until` loop is fairly similar to the while loop. The difference is that it will execute the commands until the test becomes true.
+
+---
+
+## For Loops
+
+```bash
+names='Stan Kyle Cartman'
+
+for name in $names
+do
+  echo $name
+done
+```
+
+---
+
+## Break
+
+```bash
+for value in $1/*
+do
+  if [ $used -gt 90 ]
+  then
+    echo Low disk space
+    break
+  fi
+done
+```
+
+^ The break statement tells Bash to leave the loop straight away. It may be that there is a normal situation that should cause the loop to end but there are also exceptional situations in which it should end as well.
+
+---
+
+## Continue
+
+```bash
+for value in $1/*
+do
+  if [ $used -gt 90 ]
+  then
+    echo Low disk space
+    break
+  fi
+done
+```
+
+^ The continue statement tells Bash to stop running through this iteration of the loop and begin the next iteration.
+
+---
+
+## Functions
+
+```bash
+print_something () {
+  echo Hello I am a function
+}
+
+print_something
+```
+
+^ Creating a function is fairly easy. Define the function by giving it a name. Within the curly braces we can put as many commands as we like. Once the function is defined, we can call it as many times as we'd like.
+
+---
+
+### Passing Arguments
+
+```bash
+print_something () {
+  echo Hello $1
+}
+
+print_something Mars
+print_something Jupiter
+```
+
+^ This will work a bit differently than you are used to. It is often the case that we would like the function to process some data for us. We may send data to the function in a similar way to passing command line arguments to a script. We supply the arguments directly after the function name. Within the function they are accessible as `$1`, `$2`, etc.
+
+---
+
+### Return Values
+
+```bash
+print_something () {
+  echo Hello $1
+  return 5
+}
+print_something Mars
+echo The previous function returned a value of $?
+```
+
+^ Most other programming languages have the concept of a return value for functions, a means for the function to send data back to the original calling location. Bash functions don't allow us to do this. They do however allow us to set a return status. Similar to how a program or command exits with an exit status which indicates whether it succeeded or not. We use the keyword return to indicate a return status.
+
+^ The `$?` contains the return statement of the previously run command or function.
+
+---
+
+## Bash Profile
+
+- macOS: `~/.bash_profile`
+- Windows: ?
+
+^ `bash_profile` is a configuration file for bash shell. When bash is invoked as an interactive login shell it first reads and executes commands from `~/.bash_profile`. This file can be used to export variables in shell. This is a hidden file that sits in the user directory on macOS.
+
+---
+
+## Create a Bash Profile
+
+```bash
+cd ~
+touch .bash_profile
+```
+
+---
+
+## Customize Bash Prompt
+
+```bash
+export PS1=""
+export PS1="\W\ \$ "
+```
+
+- [http://ezprompt.net](http://ezprompt.net)
+
+^ One common thing to do in your profile is customize the prompt. You can do that by exporting a variable named `PS1`. Whatever you put between the quotes will be your new prompt, and you can use some special expressions to have the prompt show some specific information.
+
+---
+
+### Git Branch in Prompt
+
+```bash
+export PS1="\W\$(parse_git_branch)\[\033[00m\] $ "
+
+parse_git_branch() {
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+```
+
+---
+
+## Changing Directories
+
+```bash
+cd ../
+cd ../../
+cd ../../../
+```
+
+^ Recall the `cd` command for changing directories.
+
+---
+
+## Change to Desktop
+
+```bash
+cd ~/Desktop
+```
+
+---
+
+## Opening Applications
+
+```bash
+open -a 'FirefoxNightly'
+open -a 'Visual Studio Code'
+open -a /Applications/Adobe\ Photoshop\ CC\ 2018/Adobe\ Photoshop\ CC\ 2018.app/
+```
+
+---
+
+## Aliases
+
+```bash
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+
+alias dt="cd ~/Desktop"
+
+alias nightly="open -a 'FirefoxNightly'"
+```
+
+---
+
+## Custom Functions
+
+^ You can add your own functions to your profile and they will be available regardless of your location in the terminal.
+
+---
+
+### Make Directory & Go
+
+```bash
+mkdir -p new_directory
+cd new_directory
+
+function mkd() {
+  mkdir -p "$@" && cd "$_";
+}
+```
+
+---
+
+### File Sizes
+
+```bash
+function fs() {
+  if du -b /dev/null > /dev/null 2>&1; then
+    local arg=-sbh;
+  else
+    local arg=-sh;
+  fi
+  if [[ -n "$@" ]]; then
+    du $arg -- "$@";
+  else
+    du $arg .[^.]* ./*;
+  fi;
+}
+```
+
+---
+
+### Remove Spaces
+
+```bash
+function removespaces() {
+  for n in *
+  do
+  old=$n
+  new=`echo $n | tr -s " " "-"`
+  echo $new
+  mv "$old" "$new"
+  done
+}
+```
+
+---
+
+## Example
+
+^ So you see most of the scripting concepts we've covered in previous classes apply to shell scripting as well. While the syntax is different, the concepts are the same which shows that a good programmer can script in any language. The syntax differences are just a matter of research. Let's build an example script.
+
+^ _examples/07-bash\_scripting/_

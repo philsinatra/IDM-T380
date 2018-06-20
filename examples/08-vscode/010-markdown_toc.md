@@ -14,15 +14,22 @@ Development team will be provided a library of PDF images that will be available
 
 A responsive web application that will run on any device with access to the internet. The provided interface tools will allow users to:
 
-- select images from a library of possibilities
-- use the provided tools to color the images
+- select an image from a library of possibilities
+- user the provided tools to color the image
+- (additional project enhancements TBD)
 
 A collaborative workflow that allows all team members to contribute via:
 
 - Git based repository
 - Node.js driven task runners
 - Slack project channel
-- additional agreed upon coding techniques
+- (additional agreed upon coding techniques TBD)
+
+## Exclusions
+
+- WebSocket integration
+- React/Expression application core
+- TBD
 
 ## Acceptance Criteria
 
@@ -31,7 +38,6 @@ The final application must:
 - be running on a live web server
 - be a responsive design (small to large)
 - include collaboration and contributions from all team members
-- credit the original artist for each page in the coloring book
 - meet all project milestones and deadlines on or ahead of schedule
 
 ## Areas of Possible Constraints
@@ -47,42 +53,30 @@ The final application must:
 
 | Deliverable | Date |
 | ----------- | ---- |
-| [Status Report](Project-Status-Report.pdf) | weekly (via GitHub Wiki) |
+| [Status Report](Project-Status-Report.pdf) | weekly |
 | Alpha | Week 7 |
 | Beta | Week 10 |
 | Version 1.0 | Week 11 |
 
 ## Roles
 
-- Client (instructor)
-- Owner (instructor)
-
-Suggestions:
-
+- Client
+- Owner
 - Project Manager
 - Asset preparation
 - UI/UX Design
-  - custom branding
 - Programming
-  - **color selector**
-  - **image selector**
-  - export/share function
 - Testing
 - Hosting
-- Marketing/Promotion
+- Marketing
 
 ## Features List
 
 - **select image from library**
-- **select color**
+- **select current color**
 
 ### Possible Suggestions
 
 - save/export current image
 - share current image
 - user accounts with saved image files
-- WebSocket integration
-
-## Source Materials
-
-- [Coloring Book Source Files](http://digm.drexel.edu/crs/IDM-T380/cdn/source.zip)
