@@ -19,6 +19,7 @@
 - [Working the Command Line](https://abookapart.com/products/working-the-command-line)
 - [Git For Humans](https://abookapart.com/products/git-for-humans)
 - [How to Modularize HTML Using Template Engines and Gulp](https://zellwk.com/blog/nunjucks-with-gulp/)
+- [Building A Static Site With Components Using Nunjucks](https://www.smashingmagazine.com/2018/03/static-site-with-nunjucks/)
 - [Bash Scripting Tutorial](https://ryanstutorials.net/bash-scripting-tutorial/bash-variables.php)
 - [SyntaxFM](https://syntax.fm)
 
