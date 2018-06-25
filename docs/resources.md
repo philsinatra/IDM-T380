@@ -63,3 +63,10 @@
 - [Getting Started](https://eslint.org/docs/user-guide/getting-started)
 - [VSCode ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 - [VSCode ESLint Setup Video](https://youtu.be/o2H8kvuwMKE)
+
+## VSCode Live Share
+
+- [Live Share](https://visualstudio.microsoft.com/services/live-share/)
+- [Live Share - Marketplace](https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsliveshare)
+- [Live Share - How to Collaborate](https://docs.microsoft.com/en-us/visualstudio/liveshare/use/vs)
+- [Live Share - Security](https://docs.microsoft.com/en-us/visualstudio/liveshare/reference/security)
