@@ -1,0 +1,38 @@
+html {
+	font-size: 150%;
+}
+
+body {
+	font: 100%/1.5 sans-serif;
+}
+
+.wrapper {
+	display: grid;
+	height: 100vh;
+	width: 100vw;
+	grid-template-columns: 300px auto;
+	grid-column-gap: 1.5rem;
+}
+
+.team {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: 0;
+	padding: 1rem;
+	list-style: none;
+	height: 25vh;
+}
+
+.team:first-child {
+	background-color: lightblue;
+}
+
+.team:nth-child(2) {
+	background-color: pink;
+}
+
+.team:last-child {
+	background-color: lightgreen;
+}
