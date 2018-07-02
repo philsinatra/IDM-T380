@@ -235,6 +235,7 @@ file1.html
 ```bash
 open filename.txt
 open folder
+open -a 'Application Name' filename.txt
 ```
 
 ^ The `open` command will open the specified file/folder using the default application specified on the system based on the type of file.
@@ -508,13 +509,13 @@ theme: Next, 1
 
 ^ `less` is a command that lets us page through output. There's a similar command called `more`, but `less` is better because it allows us to page forward and backward (unlike `more`, which only goes forward).
 
-^ Inside the `less` command, I can use the keyboard to cursor up and down; I can page forward (by pressing the Space key) or backward (by typing B). Significantly, I can search while I'm inside `less` by hitting the Slash key. I can enter an expression like `-H` (which is an argument to curl); `less` will highlight the matches and allow me to move through the next matches by typing N.
+^ Inside the `less` command, I can use the keyboard to cursor up and down; I can page forward (by pressing the Space key) or backward (by typing B). Significantly, I can search while I'm inside `less` by hitting the Slash key. I can enter an expression like `-H` (which is an argument to curl); `less` will highlight the matches and allow me to move through the next matches by typing "n".
 
 ^ `less 02-command_line.md`
 
 ^ /bash
 
-^ _N_ key to page through results
+^ _n_ key to page through results
 
 ---
 
@@ -577,6 +578,7 @@ history | grep ls | grep -v history | tail -5
 
 - `cmd` + `d`: split window vertically
 - `cmd` + `shift` + `d`: split window horizontally
+- `cmd` +  `esc`: show/hide terminal
 - themes
 
 ^ iTerm2 is my favorite terminal application because it accepts a wealth of customizations. Some of my favorites include.
@@ -595,75 +597,12 @@ history | grep ls | grep -v history | tail -5
 
 ---
 
-## `$` The Prompt
+## Customization
 
-```bash
-MacBook-Pro:~ username $
-
-Current Directory $
-~ $
-```
-
-^ Your prompt may look something like this. You probably don't care about listing the computer's name every time you enter a command. You can customize your prompt.
-
----
-
-## Aliases
-
-```bash
-cd ../
-cd ../../
-cd ../../../
-```
-
-^ Aliases are alternatives to the existing CLI commands. As an example, when you want to navigate up some number of directories, you have to use the `cd` command, followed by the _../_ characters some number of times for each directory level you want to move up.
-
----
-
-## Aliases Example
-
-```bash
-alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
-alias .....="cd ../../../.."
-```
-
-^ You can use the `alias` command to setup alias commands.
-
-^ The only problem is you only have access to these aliases in this terminal session. You can make your aliases easy to manage and globally available by setting up a configuration file and saving all of your aliases in one place.
-
----
-
-## Aliases Configuration
-
-```bash
-cd ~
-touch .aliases
-```
-
-^ Let's take a look at my _.aliases_ file.
-
----
-
-## Functions
-
-```bash
-cd ~
-touch .functions
-```
-
-^ Aliases have one limitation: you can’t insert an argument. The good news is, all of the shells have their own scripting language, which means we can write functions for our shell. Let's look at my _.functions_ file.
-
----
-
-## Profile
-
-```bash
-~/.bash_profile
-```
-
-^ In Bash shell, these configurations are controlled through a special file, located in your user directory called `.bash_profile`. Let's take a look at my `.bash_profile`.
+- prompt
+- aliases
+- functions
+- shortcuts
 
 ---
 

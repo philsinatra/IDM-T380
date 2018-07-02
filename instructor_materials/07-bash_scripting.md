@@ -288,7 +288,7 @@ echo Thank you $uservar, we have your login details
 
 ## If Statements
 
-```txt
+```bash
 if [ <some test> ]
 then
   <commands>
@@ -385,7 +385,7 @@ esac
 
 ## While Loops
 
-```text
+```bash
 while [ <some text> ]
 do
   <commands>
