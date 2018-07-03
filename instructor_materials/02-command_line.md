@@ -329,7 +329,7 @@ rm *.txt
 
 ```bash
 $ rm chapter6/
-rm: chapger6/: is a directory
+rm: chapter6/: is a directory
 ```
 
 ^ Directories aren't as simple. `rm` isn't really made to be used on them.
