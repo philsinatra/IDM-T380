@@ -12,4 +12,10 @@
 
 ### Beta Team
 
+- Hannah Sayer
+- Mike Carbone
+- Sarah Bray
+- Veronica Lin
+- Jacob Culp
+
 ### Charlie Team
