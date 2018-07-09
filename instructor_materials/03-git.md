@@ -10,7 +10,7 @@ theme: Next, 1
 
 # GIT
 
-^ Git is confusing. It is not easy to train yourself to think in versions. When we write, we have the luxury of taking the time to clarify and improve something over the course of multiple drafts. Think about the days when writing was done on stone tablets. Between the physical exertion and effort required to carve a message in a piece of stone, let alone the time and effort required to fix a type, you better get your message right the first time. Computers make these problems almost none existent. There are two places in our writing culture where making incremental changes, and tracking those changes across multiple versions, is not just helpful but crucial: law and (more important for our story) software source code.
+^ Git is confusing. It is not easy to train yourself to think in versions. When we write, we have the luxury of taking the time to clarify and improve something over the course of multiple drafts. Think about the days when writing was done on stone tablets. Between the physical exertion and effort required to carve a message in a piece of stone, let alone the time and effort required to fix a typo, you better get your message right the first time. Computers make these problems almost none existent. There are two places in our writing culture where making incremental changes, and tracking those changes across multiple versions, is not just helpful but crucial: law and (more important for our story) software source code.
 
 ---
 
@@ -22,7 +22,7 @@ theme: Next, 1
 - servers/cloud services
 - version control systems
 
-^ Early computers had to be programmed by punching holes into cards, which were fed individually into the machines, which in turn performed the instructions encoded into the cards and returned a result. Making changes on physical media like punch cards was time-consuming and expensive. Programs took hours or days to run, and an error in a program meant that the whole sequence needed to be restarted from scratch, making it very important to get it right the first time whenever possible. Things have come a long way since then...
+^ Early computers had to be programmed by punching holes into cards, _(click)_ which were fed individually into the machines, which in turn performed the instructions encoded into the cards and returned a result. Making changes on physical media like punch cards was time-consuming and expensive. Programs took hours or days to run, and an error in a program meant that the whole sequence needed to be restarted from scratch, making it very important to get it right the first time whenever possible. Things have come a long way since then. _(click)_
 
 ---
 
@@ -96,7 +96,7 @@ git checkout master
 
 ```bash
 git config --global user.name "Phil Sinatra"
-git config --global user.email "phil@philsinatra.com"
+git config --global user.email "code@philsinatra.com"
 ```
 
 ^ Enter each of these lines at a command prompt, filling in your own information. We're telling Git that a particular configuration property (`user.name`) should be set the the value we've provided.
@@ -244,7 +244,7 @@ create mode 100644 index.html
 
 ^ Staging a file causes two thing to happen. First, _(click)_ Git saves a snapshot of that file to its database, so that it can be referred to in your next commit. Git also starts a _(click)_ local draft of your next commit, with references to all of the files and directories contained within, including references to files that have not changed, from the previous commit.
 
-^ _(click)_ The staging area is not synced or shared with anyone else, it loves only on your computer.
+^ _(click)_ The staging area is not synced or shared with anyone else, it lives only on your computer.
 
 ---
 
@@ -327,8 +327,11 @@ git commit -m "Add Stylesheet"
 
 ### Commit Messages
 
-- "edit content"
-- write meaningful messages
+#### Don't Do This
+
+- "edits"
+- "final"
+- "wft why doesn't this work"
 
 ^ A quick note on commit messages. Your messages are being used to create a log of all the commits of your project. The messages should be written so that they provide a clear outline of the history of your project. _(click)_ 100 messages that all read "edit content" is a terrible log. _(click)_ Writing meaningful messages is a good practice to get into early in your careers.
 
@@ -380,7 +383,7 @@ $ git status
 # deleted:    robots.txt
 ```
 
-^ When we delete a file using `git rm`, Git creates a new snapshot of the project, _minus_ the file(s) being deleted, and stages that versoin as the next one to be committed.
+^ When we delete a file using `git rm`, Git creates a new snapshot of the project, _minus_ the file(s) being deleted, and stages that version as the next one to be committed.
 
 ---
 
@@ -561,7 +564,7 @@ $ git commit -am "💄 Update Header Background Color"
 
 ^ There are no hard rules about naming branches. Every Git repository has a `master` branch, and by convention `master` is meant to be the "prime" or "default" branch of the project. Names that you give your branches should logically describe its reason for existing. Come up with a label that identifies the work being done.
 
-^ Example: A branch created to fix a problem with Chrome 32 might be called _(click)_`fix-chrome32-bug`. It could be something more specific like _(click)_ `fix-chrome32-webkit-bug`. It could be more generic like _(click)_ `bugfix`. Choose a level of specificity that will distinguish this branch from others on your project without wasting space.
+^ Example: A branch created to fix a problem with Chrome 32 might be called _(click)_ `fix-chrome32-bug`. It could be something more specific like _(click)_ `fix-chrome32-webkit-bug`. It could be more generic like _(click)_ `bugfix`. Choose a level of specificity that will distinguish this branch from others on your project without wasting space.
 
 ---
 
@@ -899,7 +902,7 @@ Date:   Fri Dec 26 16:28:41 2014 -0500
 commit bf8144d4690d3f6052dc7f42135e3e9944b96b5a
 Author: Phil Sinatra <code@philsinatra.com>
 Date:   Thu Dec 25 13:24:25 2014 -0600
-    🔧  Add make Script
+    🔧  Add Make Script
 ```
 
 ^ By default, `git log` will show a list of every commit in your project.
@@ -923,7 +926,7 @@ Date:   Thu Dec 25 13:24:25 2014 -0600
 - tags
 - rebase
 - diff
-- [my notes](https://github.com/philsinatra/docs/blob/master/git.md#show)
+- [my notes](https://github.com/philsinatra/docs/blob/master/git.md)
 
 ---
 
