@@ -268,7 +268,7 @@ touch screen.css
 #### Edit HTML
 
 ```html
-<link href="css/styles.css" type="text/css" media="all">
+<link href="css/screen.css" type="text/css" media="all">
 ```
 
 ^ Let's say we add more files to our project, and let's edit our HTML file to use our new stylesheet. We're adding a directory, with a new file in it and then we're changing a file that already exists.
