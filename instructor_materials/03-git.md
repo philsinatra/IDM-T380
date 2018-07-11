@@ -262,7 +262,7 @@ create mode 100644 index.html
 
 ```bash
 mkdir css
-touch screen.css
+touch styles.css
 ```
 
 #### Edit HTML
@@ -293,7 +293,7 @@ $ git status
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
-^ When we check `git status` we see the HTML file Git already knows about (because it was committed earlier) has been modified, listed under the heading _Changes not staged for commit_. Below that is the _Untracked files_ list. Instead of listing _screen.css_, it shows the entire _css_ folder. That's Git's way of telling us there's an entire subdirectory it doesn't know about.
+^ When we check `git status` we see the HTML file Git already knows about (because it was committed earlier) has been modified, listed under the heading _Changes not staged for commit_. Below that is the _Untracked files_ list. Instead of listing _styles.css_, it shows the entire _css_ folder. That's Git's way of telling us there's an entire subdirectory it doesn't know about.
 
 ---
 
@@ -331,7 +331,7 @@ git commit -m "Add Stylesheet"
 
 - "edits"
 - "final"
-- "wft why doesn't this work"
+- "wtf why doesn't this work"
 
 ^ A quick note on commit messages. Your messages are being used to create a log of all the commits of your project. The messages should be written so that they provide a clear outline of the history of your project. _(click)_ 100 messages that all read "edit content" is a terrible log. _(click)_ Writing meaningful messages is a good practice to get into early in your careers.
 
