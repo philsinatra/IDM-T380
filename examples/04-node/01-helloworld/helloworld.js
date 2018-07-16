@@ -1,10 +1,8 @@
-{
-  console.log('hello world');
+console.log('hello world');
 
-  const myFunction = name => {
-    return name.toUpperCase();
-  };
+const myFunction = name => {
+	return name.toUpperCase();
+};
 
-  let myName = 'phil';
-  console.log(myFunction(myName));
-}
+let myName = 'phil';
+console.log(myFunction(myName));

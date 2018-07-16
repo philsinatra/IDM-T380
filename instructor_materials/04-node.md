@@ -65,7 +65,7 @@ $ node myfile.js
 ### What's Installed
 
 - Node.js
-- NPM package manager
+- [NPM package manager](https://www.npmjs.com)
 
 ^ You will now have the Node.js runtime and NPM package manager. NPM is a package manager for Javascript, and is currently the largest source of Javascript based packages available. Most of the packages in the system are open source and easy to install and incorporate into your dev process. You can create an account and add your own packages also.
 
@@ -73,11 +73,11 @@ $ node myfile.js
 
 ## How Does Node Work
 
-^ Easier to see it than explain it. _`examples/04-node/01,02,03`_
+^ Easier to see it than explain it. _examples/04-node/01,02,03_
 
 ---
 
-## NPM
+## [NPM](https://www.npmjs.com)
 
 ^ When you install Node.js, you will also get a copy of NPM, the package manager for JavaScript. The npmjs.com website will let you browser almost seven hundred thousand packages and libraries, most of which are open source and free to use. Packages can be installed globally on your computer, or locally on a per project basis, depending on your needs. These packages and libraries can drastically speed up and improve your development workflow.
 
@@ -86,7 +86,7 @@ $ node myfile.js
 ### Update NPM
 
 ```bash
-npm i -g npm
+npm install -g npm
 ```
 
 ^ Often, the version of NPM that comes with Node.js is a few minor releases behind the latest version of NPM. If you want to update NPM to the latest stable version, after installing Node.js, you can use NPM to update NPM. More on this in a minute.
@@ -112,7 +112,7 @@ npm i -g npm
 
 ---
 
-#### Optimizing Images
+### Optimizing Images
 
 - [SVG Optimizer](https://jakearchibald.github.io/svgomg/)
 - [`svgo`](https://www.npmjs.com/package/svgo)
@@ -120,13 +120,13 @@ npm i -g npm
 
 ^ Has anyone seen or used this website before? It's a great tool for optimizing `.svg` files. What's the problem thought?
 
-^ _copy `examples/04-npm_global/timeline-outlines.svg` to Desktop and run optimizer_
+^ _copy **examples/04-npm\_global/timeline-outlines.svg** to Desktop and run optimizer_
 
 ^ With these packages installed globally on your computer, you can optimize images regardless of what/where you are working.
 
 ---
 
-### Project Dependencies
+## Project Dependencies
 
 - [normalize.css](https://www.npmjs.com/package/normalize.css)
 - [babel](https://www.npmjs.com/package/babel-cli)
@@ -137,7 +137,7 @@ npm i -g npm
 
 ---
 
-### Setup `package.json`
+## Setup `package.json`
 
 ```bash
 npm init
@@ -149,7 +149,7 @@ npm init
 
 ---
 
-### `package.json` Example
+## `package.json` Example
 
 ```json
 {
@@ -177,7 +177,7 @@ npm init
 
 ---
 
-### `package.json` Dependencies Listing
+## `package.json` Dependencies Listing
 
 ```json
 "devDependencies": {
@@ -207,7 +207,7 @@ npm init
 
 ---
 
-### Installing Dependencies
+## Installing Dependencies
 
 ```bash
 npm install --save <name>
@@ -225,7 +225,7 @@ npm install --save-dev <name>@<version>
 
 ---
 
-### Where Do They Go
+## Where Do They Go
 
 ```bash
 $ ls -l
@@ -245,7 +245,7 @@ src
 
 ---
 
-### `package-lock.json`
+## `package-lock.json`
 
 ```json
 "dependencies": {
@@ -270,7 +270,7 @@ src
 
 ## Local Example
 
-^ _`examples/04-node/05-npm_local`_
+^ _examples/04-node/05-npm\_local_
 
 ---
 
@@ -334,5 +334,3 @@ local_html
 ^ _node\_modules_ does not - why?
 
 ^ Tons of files = bloat. `package.json` is going to handle syncing the correct files for us, so these files don't need to be synced in the repo.
-
----

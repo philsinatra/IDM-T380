@@ -1,17 +1,16 @@
-[
-  {
-    "name": "John",
-    "age": 30,
-    "car": "Honda"
-  },
-  {
-    "name": "Jane",
-    "age": 26,
-    "car": "Ford"
-  },
-  {
-    "name": "Tom",
-    "age": 62,
-    "car": "Chevy"
-  }
+[{
+		"name": "John",
+		"age": 30,
+		"car": "Dodge"
+	},
+	{
+		"name": "Jane",
+		"age": 26,
+		"car": "Ford"
+	},
+	{
+		"name": "Tom",
+		"age": 62,
+		"car": "Chevy"
+	}
 ]
