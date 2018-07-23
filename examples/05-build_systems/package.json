@@ -21,7 +21,7 @@
     "gulp-plumber": "^1.2.0",
     "gulp-sass": "^4.0.0",
     "gulp-sourcemaps": "^2.6.4",
-    "gulp-strip-debug": "^3.0.0",
+    "gulp-strip-debug-arbitrary": "github:berstend/gulp-strip-debug-arbitrary",
     "gulp-uglify": "^3.0.0",
     "gutil": "^1.6.4",
     "yargs": "^11.0.0"

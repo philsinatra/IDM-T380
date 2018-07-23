@@ -151,6 +151,21 @@ gulp.task('scripts', ['lint'], () => {
 });
 ```
 
+#### Strip Debug Problem
+
+Looks like there's some type of bug or issue that needs to be worked out with using this package in conjunction with ESLint.
+
+We have two options - debug the issue or find a different package.
+
+```bash
+npm install --save-dev berstend/gulp-strip-debug-arbitrary
+npm uninstall gulp-strip-debug
+```
+
+```javascript
+const stripDebug = require('gulp-strip-debug-arbitrary');
+```
+
 ## Gulp If
 
 We don't always want to minify the code, or remove all of the logs and alerts. What if we could specify different types of output, let's say for development vs production?
