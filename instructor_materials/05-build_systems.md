@@ -66,6 +66,19 @@ theme: Next, 1
 
 ---
 
+## Getting Started With Gulp
+
+```bash
+npm install --global gulp-cli
+
+# may need sudo
+sudo npm install --global gulp-cli
+```
+
+^ If you have previously installed a version of gulp globally, please run `npm rm --global gulp` to make sure your old version doesn't collide with gulp-cli.
+
+---
+
 ## Gulp Setup
 
 ```javascript
