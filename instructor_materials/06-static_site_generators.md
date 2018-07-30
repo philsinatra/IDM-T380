@@ -50,9 +50,9 @@ theme: Next, 1
 - No user input
 - No admin UI
 
-^ With a static site you lose the ability to have real-time data, such as indication about which stories have been trending for the past hour, or content that dynamically changes for each visitor, like a "recommended articles for you" kind of thing. Static is static and will be the same for everyone.
+^ With a static site you _(click)_ lose the ability to have real-time data, such as indication about which stories have been trending for the past hour, or content that dynamically changes for each visitor, like a "recommended articles for you" kind of thing. Static is static and will be the same for everyone.
 
-^ User Input: Adding user generated content to a static site is a bit of a challenge.
+^  _(click)_ User Input: Adding user generated content to a static site is a bit of a challenge.
 
 ---
 
@@ -87,7 +87,7 @@ theme: Next, 1
 <?php include "header.php"; ?>
 ```
 
-^ We are once again going to want to use imports. Languages like PHP make this simple with things like this? The problem is, static file hosts don’t run PHP (on purpose) and HTML alone is no help. Fortunately, we can preprocess includes with Nunjucks.
+^ We are once again going to want to use imports. Languages like PHP make this simple with code like this. The problem is, static file hosts don’t run PHP (on purpose) and HTML alone is no help. Fortunately, we can preprocess includes with Nunjucks.
 
 ---
 
@@ -146,15 +146,15 @@ theme: Next, 1
 
 ```html
 <div class="gallery">
-<div class="gallery__item">
-  <img src="item-1.png" alt="item-1">
-</div>
-<div class="gallery__item">
-  <img src="item-2.png" alt="item-2">
-</div>
-<div class="gallery__item">
-  <img src="item-3.png" alt="item-3">
-</div>
+  <div class="gallery__item">
+    <img src="item-1.png" alt="item-1">
+  </div>
+  <div class="gallery__item">
+    <img src="item-2.png" alt="item-2">
+  </div>
+  <div class="gallery__item">
+    <img src="item-3.png" alt="item-3">
+  </div>
 ```
 
 ^ This benefit is best explained with an example. Let’s say you’re creating a gallery of images. Your markup would be something similar to this.
@@ -248,7 +248,7 @@ images: [{
 {% endblock %}
 ```
 
-Now each page will be it's own file, each of which will reference (or extend from) a template layout, putting different content in the various _blocks_, creating unique HTML pages.
+^ Now each page will be it's own file, each of which will reference (or extend from) a template layout, putting different content in the various _blocks_, creating unique HTML pages.
 
 ---
 

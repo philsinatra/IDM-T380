@@ -9,14 +9,16 @@
 		- [Setup Gulp File](#setup-gulp-file)
 		- [Adding a Partial](#adding-a-partial)
 		- [Adding a Macro](#adding-a-macro)
-		- [Enhancing The Macro](#enhancing-the-macro)
 		- [Using The Macro](#using-the-macro)
+		- [Enhancing The Macro](#enhancing-the-macro)
 		- [Working With Data](#working-with-data)
 	- [Nunjucks + Node.js](#nunjucks--nodejs)
 		- [Data Source](#data-source)
+		- [`standard` Template](#standard-template)
 		- [Dependencies](#dependencies)
 		- [Gen Script](#gen-script)
 		- [Looping Through The Screens](#looping-through-the-screens)
+		- [`standard` Template Safe](#standard-template-safe)
 
 <!-- /TOC -->
 
@@ -56,7 +58,7 @@ The _pages_ folder is used for storing files that will be compiled into HTML. On
 
 First of all, one good thing about Nunjucks (that other template engines might not have) is that it allows you to create a template that contains boilerplate HTMl code which can be inherited by other pages. Let’s call this boilerplate HTML `layout.njk`.
 
-Create a file called layout.nunjucks and place it in your templates folder. It should contain some boilerplate code like `<html>`, `<head>` and `<body>` tags. It can also contain things that are similar across all your pages, like links to CSS and JavaScript files.
+Create a file called `layout.njk` and place it in your templates folder. It should contain some boilerplate code like `<html>`, `<head>` and `<body>` tags. It can also contain things that are similar across all your pages, like links to CSS and JavaScript files.
 
 - `src/templates/layout.njk`
 
@@ -186,33 +188,14 @@ All macros begin and end with macro tags.
 <nav>
   <ul>
     <li>
-      <a href="#" class="{% if activePage == 'home' %} active {% endif %}">Home</a>
+      <a href="#" class="{% if activePage == 'home' %}active{% endif %}">Home</a>
     </li>
     <li>
-      <a href="#" class="{% if activePage == 'about' %} active {% endif %}">About</a>
+      <a href="#" class="{% if activePage == 'about' %}active{% endif %}">About</a>
     </li>
     <li>
-      <a href="#" class="{% if activePage == 'contact' %} active {% endif %}">Contact</a>
+      <a href="#" class="{% if activePage == 'contact' %}active{% endif %}">Contact</a>
     </li>
-  </ul>
-</nav>
-{% endmacro %}
-```
-
-### Enhancing The Macro
-
-That will get the job done, but it's a bit unsophisticated. Let's try simplifying things with a loop.
-
-```html
-{% macro active(activePage="home") %}
-<nav>
-  <ul>
-    {% set items = ['home', 'about', 'contact'] %}
-    {% for item in items %}
-      <li {%if activePage == item %} class="active" {% endif %}>
-        <a href="#">{{ item }}</a>
-      </li>
-    {% endfor %}
   </ul>
 </nav>
 {% endmacro %}
@@ -227,7 +210,7 @@ Once we're done writing the macro we can use it in _index.njk_. To gain access t
 ```html
 {% block content %}
 
-{% import 'macros/macro-nav.njk' as nav %}
+{% import "macros/macro-nav.njk" as nav %}
 
 {% endblock %}
 ```
@@ -237,10 +220,31 @@ In this case, we've set the variable `nav` to equal the entire _macro-nav.njk_ f
 ```html
 {% block content %}
 
-{% import 'macros/macro-nav.njk' as nav %}
+{% import "macros/macro-nav.njk" as nav %}
 {{ nav.active('home') }}
 
 {% endblock %}
+```
+
+---
+
+### Enhancing The Macro
+
+That will get the job done, but it's a bit unsophisticated. Let's try simplifying things with a loop.
+
+```html
+{% macro active(activePage="home") %}
+<nav>
+  <ul>
+    {% set items = ["home", "about", "contact"] %}
+    {% for item in items %}
+      <li {%if activePage == item %} class="active" {% endif %}>
+        <a href="#">{{ item }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</nav>
+{% endmacro %}
 ```
 
 ### Working With Data
@@ -359,6 +363,28 @@ mkdir src/templates
 }
 ```
 
+### `standard` Template
+
+- `./src/templates/standard.njk`
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>{{ S_Title_t }}</title>
+</head>
+<body>
+  <main>
+    <h1>{{ S_Title_t }}</h1>
+    {{ S_Screen }}
+  </main>
+</body>
+</html>
+```
+
 ### Dependencies
 
 No Gulp for this example. Instead we'll build the script using Javascript and run it with Node.js. We'll use two packages for this job:
@@ -451,4 +477,26 @@ const RenderPage = (info) => {
   mkdirp.sync(pagePath);
   fs.writeFileSync(`${pagePath}/${info.S_id}.html`, res, 'utf8');
 };
+```
+
+### `standard` Template Safe
+
+- `./src/templates/standard.njk`
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>{{ S_Title_t | safe }}</title>
+</head>
+<body>
+  <main>
+    <h1>{{ S_Title_t | safe }}</h1>
+    {{ S_Screen | safe }}
+  </main>
+</body>
+</html>
 ```
