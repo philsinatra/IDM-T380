@@ -10,13 +10,13 @@
 - Woo Song
 - Ben Rodia
 
-### Beta Team
+### Bravo Team
 
-- Fee George (Project Manager)
-- Camarata Nick
-- Li Yuang
-- Mortimer Axel
-- Zhao Katie
+- ~~Fee George (Project Manager)~~
+- Katie Zhao (Project Manager)
+- Nick Camarata
+- Yuang Li
+- Axel Mortimer
 
 ### Charlie Team
 
