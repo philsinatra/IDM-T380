@@ -75,7 +75,7 @@ echo Hello World!
 
 ## The Shebang (#!)
 
-### `!#/bin/bash
+### `!#/bin/bash`
 
 ^ This is the first line of our script. The hash exclamation mark character sequence is referred to as the _shebang_. Following it is the path to the program that should be used to run the rest of the lines of the script file. For Bash scripts, that will be the path the the Bash program, but there are many other types of scripts and they each have their own interpreter.
 
@@ -121,20 +121,20 @@ $myName = "Phil";
 
 ### Reading Variables
 
-- reading: $myVariable
-- setting: myVariable=Hello
+- reading: `$myVariable`
+- setting: `myVariable=Hello`
 - casing: your preferene
 - location: anywhere
 
 ^ To read a variable we place its name, preceded by a dollar sign, anywhere in the script. Here are some points on syntax.
 
-^ When referring to or reading a variable we place a $ sign before the variable name.
+^ _(click)_ When referring to or reading a variable we place a $ sign before the variable name.
 
-^ When setting a variable we leave out the $ sign.
+^ _(click)_ When setting a variable we leave out the $ sign.
 
-^ Some people like to always write variable names in uppercase so they stand out. It's your preference however. They can be all uppercase, all lowercase, or a mixture.
+^ _(click)_ Some people like to always write variable names in uppercase so they stand out. It's your preference however. They can be all uppercase, all lowercase, or a mixture.
 
-^ A variable may be placed anywhere in a script (or on the command line for that matter) and, when run, Bash will replace it with the value of the variable. This is made possible as the substitution is done before the command is run.
+^ _(click)_ A variable may be placed anywhere in a script (or on the command line for that matter) and, when run, Bash will replace it with the value of the variable. This is made possible as the substitution is done before the command is run.
 
 ---
 
@@ -211,7 +211,7 @@ ls $sampledir
 - single quotes: 'treat every character literally'
 - double quotes: "allow substitution"
 
-^ In the previous example, all of the values for our variables were single words. When we want variables to store more complex values, we need to use quotes. Remember, under normal circumstances, Bash uses a spce to determine separate items.
+^ In the previous example, all of the values for our variables were single words. When we want variables to store more complex values, we need to use quotes. Remember, under normal circumstances, Bash uses a space to determine separate items.
 
 ^ When we enclose content in quotes, we're indicating to Bash that the contents should be considered as a single item. You can use single or double quotes.
 
@@ -277,7 +277,7 @@ echo It\'s nice to meet you $varname
 ### Read More
 
 ```bash
-read - p 'Username: ' uservar
+read -p 'Username: ' uservar
 read -sp 'Password: ' passvar
 echo Thank you $uservar, we have your login details
 ```
@@ -306,11 +306,9 @@ fi
 ```bash
 if [ $1 -gt 100 ]
 then
-  echo Hey that\s a large number
+  echo Hey that is a large number
   pwd
 fi
-
-date
 ```
 
 ---
@@ -427,7 +425,7 @@ done
 ## For Loops
 
 ```bash
-names='Stan Kyle Cartman'
+names='Stan Kyle Cartman Kenny'
 
 for name in $names
 do
@@ -462,7 +460,7 @@ do
   if [ $used -gt 90 ]
   then
     echo Low disk space
-    break
+    continue
   fi
 done
 ```
@@ -520,7 +518,7 @@ echo The previous function returned a value of $?
 ## Bash Profile
 
 - macOS: `~/.bash_profile`
-- Windows: ?
+- Windows: `./bashrc`
 
 ^ `bash_profile` is a configuration file for bash shell. When bash is invoked as an interactive login shell it first reads and executes commands from `~/.bash_profile`. This file can be used to export variables in shell. This is a hidden file that sits in the user directory on macOS.
 
