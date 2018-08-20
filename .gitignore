@@ -50,8 +50,9 @@ Thumbs.db
 ######################
 *Thinkstock*
 build
+color_palette
 coloring_book
+examples/07-bash_scripting/02
 graphics
 node_modules
 report.txt
-examples/07-bash_scripting/02
