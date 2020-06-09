@@ -6,13 +6,14 @@
 
 ## Presentations
 
-- [Command Line](http://digm.drexel.edu/crs/IDM-T380/presentations/02-command_line.pdf)
-- [Git Workflows](http://digm.drexel.edu/crs/IDM-T380/presentations/03-git.pdf)
-- [Node.js](http://digm.drexel.edu/crs/IDM-T380/presentations/04-node.pdf)
-- [Build Systems](http://digm.drexel.edu/crs/IDM-T380/presentations/05-build_systems.pdf)
-- [Static Site Generators](http://digm.drexel.edu/crs/IDM-T380/presentations/06-static_site_generators.pdf)
-- [Bash Scripting](http://digm.drexel.edu/crs/IDM-T380/presentations/07-bash_scripting.pdf)
-- [Mastering Your Editor](http://digm.drexel.edu/crs/IDM-T380/presentations/08-vscode.pdf)
+- [Command Line](http://digm.drexel.edu/crs/IDM-T380/cdn/presentations/02-command-line.pdf)
+- [Git Workflows](http://digm.drexel.edu/crs/IDM-T380/cdn/presentations/03-git.pdf)
+- [Node.js](http://digm.drexel.edu/crs/IDM-T380/cdn/presentations/04-node.pdf)
+- [Task Runners](http://digm.drexel.edu/crs/IDM-T380/cdn/presentations/05-task-runners.pdf)
+- [Bundlers](http://digm.drexel.edu/crs/IDM-T380/cdn/presentations/06-bundlers.pdf)
+- [Static Site Generators](http://digm.drexel.edu/crs/IDM-T380/cdn/presentations/07-static-site-generators.pdf)
+- [Bash Scripting](http://digm.drexel.edu/crs/IDM-T380/cdn/presentations/08-bash-scripting.pdf)
+- [Mastering Your Editor](http://digm.drexel.edu/crs/IDM-T380/cdn/presentations/08-vscode.pdf)
 
 ## References
 

@@ -1,3 +1,3 @@
-const lib = require('./lib');
+const lib = require('./lib')
 
-console.log(lib.square(11));
+console.log(lib.square(11))

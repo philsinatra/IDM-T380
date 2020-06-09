@@ -1,0 +1,22 @@
+#!/bin/sh
+
+set -e
+
+cd "$(dirname "$0")/.."
+
+. ./bin/config
+
+lsource="./src"
+dest="/Users/philipsinatra/Desktop/today/server"
+
+dirs=("fonts" "images")
+
+echo "${green}==> Pushing binary assets...${reset}"
+
+for element in ${dirs[@]}
+do
+  dir=$element
+  echo "rsync from $lsource/$dir"
+  echo "        to $dest"
+  rsync -razOv --exclude .DS_Store --exclude .git "$lsource/$dir" "$dest/"
+done

@@ -1,0 +1,53 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "extends": "eslint:recommended",
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "rules": {
+    "arrow-parens": ["error", "as-needed"],
+    "comma-dangle": 0,
+    "consistent-return": 0,
+    "func-names": 0,
+    "import/no-extraneous-dependencies": 0,
+    "indent": [
+      "error",
+      2,
+      {
+        "ignoredNodes": ["TemplateLiteral *"]
+      }
+    ],
+    "linebreak-style": ["error", "unix"],
+    "max-len": [
+      1,
+      {
+        "code": 80,
+        "tabWidth": 2
+      }
+    ],
+    "no-console": 0,
+    "no-multiple-empty-lines": [
+      "error",
+      {
+        "max": 1
+      }
+    ],
+    "no-unused-vars": [
+      1,
+      {
+        "argsIgnorePattern": "^err"
+      }
+    ],
+    "quotes": ["error", "single"],
+    "semi": 0
+  }
+}

@@ -1,5 +1,5 @@
 module.exports = {
   square: x => {
-    return x * x;
+    return x * x
   }
-};
+}

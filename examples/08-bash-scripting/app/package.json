@@ -1,0 +1,31 @@
+{
+	"name": "today",
+	"version": "1.0.0",
+	"description": "A sample project",
+	"main": "gulpfile.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "Phil",
+	"license": "ISC",
+	"devDependencies": {
+		"babel-core": "^6.26.0",
+		"babel-preset-env": "^1.6.1",
+		"del": "^3.0.0",
+		"gulp": "^3.9.1",
+		"gulp-autoprefixer": "^5.0.0",
+		"gulp-babel": "^7.0.1",
+		"gulp-concat": "^2.6.1",
+		"gulp-eslint": "^4.0.2",
+		"gulp-if": "^2.0.2",
+		"gulp-nunjucks-render": "^2.2.2",
+		"gulp-plumber": "^1.2.0",
+		"gulp-sourcemaps": "^2.6.4",
+		"gulp-strip-debug-arbitrary": "github:berstend/gulp-strip-debug-arbitrary",
+		"gulp-stylus": "^2.7.0",
+		"gulp-uglify": "^3.0.0",
+		"gutil": "^1.6.4",
+		"natives": "^1.1.6",
+		"yargs": "^11.0.0"
+	}
+}

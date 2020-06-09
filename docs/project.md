@@ -20,8 +20,7 @@ A responsive web application that will run on any device with access to the inte
 A collaborative workflow that allows all team members to contribute via:
 
 - Git based repository
-- Node.js driven task runners
-- Slack project channel
+- Node.js driven task runners, bundlers, scripts
 - additional agreed upon coding techniques
 
 ## Acceptance Criteria

@@ -1,0 +1,12 @@
+{% macro active(activePage="home") %}
+<nav>
+  <ul>
+    {% set items = ['index', 'about', 'contact'] %}
+    {% for item in items %}
+      <li {%if activePage == item %} class="active" {% endif %}>
+        <a href="{{ item }}.html">{{ item }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</nav>
+{% endmacro %}

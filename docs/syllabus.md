@@ -1,7 +1,5 @@
 # Syllabus
 
-<!-- TOC -->
-
 - [Syllabus](#syllabus)
 	- [Description](#description)
 	- [Course Purpose](#course-purpose)
@@ -17,8 +15,6 @@
 		- [Drexel University Policy on Cheating](#drexel-university-policy-on-cheating)
 	- [Statement for Students with Disabilities](#statement-for-students-with-disabilities)
 	- [Acknowledging Conditions and Obligations in Syllabus](#acknowledging-conditions-and-obligations-in-syllabus)
-
-<!-- /TOC -->
 
 ## Description
 
@@ -47,11 +43,11 @@ By the end of the course, student will be able to
 | Week 2 | Command Line |
 | Week 3 | Git |
 | Week 4 | Node.js |
-| Week 5 | Build Systems |
-| Week 6 | Static Site Generators |
-| Week 7 | Shell Scripting |
-| Week 8 | Optimizing the Editor |
-| Week 9 | *wildcard* |
+| Week 5 | Task Runners |
+| Week 6 | Bundlers |
+| Week 7 | Static Site Generators |
+| Week 8 | Shell Scripting |
+| Week 9 | Optimizing the Editor |
 | Week 10 | Open Lab |
 
 ## Grading

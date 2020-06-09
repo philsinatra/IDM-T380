@@ -1,14 +1,10 @@
 build-lists: true
-footer: IDM 222: Web Authoring II
+footer: IDM T380: Workflow Optimization Techniques
 slidenumbers: true
 autoscale: true
-theme: Next, 1
+theme: Work, 1
 
-# Workflow Optimization Techniques
-
----
-
-# Node.js & NPM
+> Node.js
 
 ^ _Node.js_ is a JavaScript runtime built on Chrome's V8 JavaScript engine. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient. Node.js' package ecosystem, _npm_, is the largest ecosystem of open source libraries in the world.
 
@@ -71,13 +67,16 @@ $ node myfile.js
 
 ---
 
-## How Does Node Work
+> How Does Node Work
 
 ^ Easier to see it than explain it. _examples/04-node/01,02,03_
 
 ---
 
-## [NPM](https://www.npmjs.com)
+## Package Managers
+
+- [NPM](https://www.npmjs.com)
+- [Yarn](https://yarnpkg.com)
 
 ^ When you install Node.js, you will also get a copy of NPM, the package manager for JavaScript. The npmjs.com website will let you browser almost seven hundred thousand packages and libraries, most of which are open source and free to use. Packages can be installed globally on your computer, or locally on a per project basis, depending on your needs. These packages and libraries can drastically speed up and improve your development workflow.
 
@@ -103,10 +102,6 @@ npm install -g npm
 - math
 - frameworks
 - and more...
-
----
-
-## Global Examples
 
 ^ Let's take a look at some examples of packages that can be helpful for workflow at a global scope.
 
@@ -265,10 +260,6 @@ src
 ```
 
 ^ Another file was also automatically created along with the _node\_modules_ directory. `package-lock.json` is automatically generated for any operations where npm modifies either the node_modules tree, or package.json . It describes the exact tree that was generated, such that subsequent installs are able to generate identical trees, regardless of intermediate dependency updates. This is what guarantees that collaborators are going to install the required packages and correct versions when they setup our project. This file should also be checked into the repository.
-
----
-
-## Local Example
 
 ^ _examples/04-node/05-npm\_local_
 

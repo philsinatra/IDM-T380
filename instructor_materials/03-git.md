@@ -1,14 +1,10 @@
 build-lists: true
-footer: IDM 222: Web Authoring II
+footer: IDM T380: Workflow Optimization Techniques
 slidenumbers: true
 autoscale: true
-theme: Next, 1
+theme: Work, 1
 
-# Workflow Optimization Techniques
-
----
-
-# GIT
+> GIT
 
 ^ Git is confusing. It is not easy to train yourself to think in versions. When we write, we have the luxury of taking the time to clarify and improve something over the course of multiple drafts. Think about the days when writing was done on stone tablets. Between the physical exertion and effort required to carve a message in a piece of stone, let alone the time and effort required to fix a typo, you better get your message right the first time. Computers make these problems almost none existent. There are two places in our writing culture where making incremental changes, and tracking those changes across multiple versions, is not just helpful but crucial: law and (more important for our story) software source code.
 
@@ -26,7 +22,7 @@ theme: Next, 1
 
 ---
 
-## Git Version Control
+> Git Version Control
 
 ^ Version control systems like Git work by keeping a copy of each successive version of your project in something called a repository, into which you commit versions of your work that represent logical pauses, like save points in a video game. Every commit includes helpful metadata like the name and email address of the person who made it, so you can pinpoint whom to praise (or blame) for a particular change.
 
@@ -55,6 +51,8 @@ $ git
 ---
 
 ## Installing Git (Windows)
+
+![100%](https://gitforwindows.org/img/gwindows_logo.png)
 
 ^ The Git development team maintains an easy-to-use installer package for Windows that you can download from the official Git website. The install wizard will ask you a bunch of questions about how you want to configure and use Git; if you're unsure how to answer any of them, just go with the default settings.
 
@@ -144,12 +142,6 @@ Checking connectivity... done
 
 ---
 
-## Preparing to Commit
-
-^ Git watches every change you make within a directory under its care. Git proceeds by addition. Even though files in your project can be created, deleted or changed, the commits tracking those changes are always _added_. When you remove a file, you're adding a commit. Git is more concerned with your commits than the actual file content.
-
----
-
 ## Understanding Status
 
 ```html
@@ -163,6 +155,8 @@ Checking connectivity... done
 </body>
 </html>
 ```
+
+^ Git watches every change you make within a directory under its care. Git proceeds by addition. Even though files in your project can be created, deleted or changed, the commits tracking those changes are always _added_. When you remove a file, you're adding a commit. Git is more concerned with your commits than the actual file content.
 
 ^ Once you have your project setup, it's time to get to work. You create your first HTML file. Save the file in your project directory as _index.html_.
 
@@ -352,7 +346,7 @@ git commit -m "Add Stylesheet"
 
 ---
 
-## [gitm😆ji](https://gitmoji.carloscuesta.me)
+> [gitm😆ji](https://gitmoji.carloscuesta.me)
 
 ---
 
@@ -420,6 +414,8 @@ git reset filename.txt
 ---
 
 ## Branches
+
+![100%](https://git-scm.com/book/en/v2/images/basic-branching-2.png)
 
 ^ So far we've been talking about sequential versioning - tracking the difference between a snapshot of your work and its earlier forms. Every commit includes a reference to its immediate predecessor, or _parent commit_, and from that reference, Git can work backward and explain the entire chain of commits that came before it. This relationship is important for understanding where you've been, but not always helpful for understanding where you're going, or why. This is where _branches_ come in handy.
 
@@ -581,6 +577,8 @@ $ git commit -am "💄 Update Header Background Color"
 
 ## Merging
 
+![fit](https://git-scm.com/book/en/v2/images/undomerge-reset.png)
+
 ^ Sometimes, a branch will serve as a place to do work that you plan to throw away. It's quick and cheap and you're under no obligation to reconcile the version of your work in a branch with the one in `master`.
 
 ^ Most of the time, though, people use branches to work on things that they intend to fold back into the master copy eventually. `master` continues to evolve independently of other topic branches, and so you'll want to synchronize those changes with the ones in your branch.
@@ -607,6 +605,8 @@ Fast-forward
 ---
 
 ## Handling Merge Conflicts
+
+![](https://assets-global.website-files.com/5b5aa355afe474a8b1329a37/5ba51d4940148c2f30c68a6a_conflict%20mgmt.jpg)
 
 ^ This scenario is called a _fast-forward_ merge. This, the simplest type of merge, is easy because only one branch has changed. The `master` branch has no commits that our topic branch does not have, so when we merge, our topic branch changes can smoothly be incorporated into `master` quickly and with conflict.
 
@@ -692,6 +692,8 @@ w/ resolved conflicts"
 
 ## Remotes
 
+![fit](https://git-scm.com/book/en/v2/images/remote-branches-1.png)
+
 ^ So far all of the changes we've made and committed live in one place: your computer. Git is great because unlike other version control systems, Git maintains the repository of committed versions locally instead of exclusively on a server, which would require you to be online to commit changes. Git works offline by default.
 
 ^ But working solo is not really why people come to Git. People usually come to Git because they want to collaborate. A _remote repository_ as opposed to a local one on your computer is a copy of a Git project that lives somewhere else: another computer on your network, someone elses computer, an online service like GitHub - anywhere else.
@@ -750,12 +752,6 @@ origin
 
 ---
 
-### Pushing Changes
-
-^ We've worked on our new homepage for a while, and while doing so we've discovered a bug in some JavaScript. Someone else on the team has offered to help fix the problem, but first we need to get our changes into her copy of the project. To do this, we need to push the `new-homepage` branch from our computer to the server, where our teammate can find and pull from it.
-
----
-
 ### Pushing Changes Example
 
 ```bash
@@ -768,6 +764,8 @@ Total 8 (delta 1), reused 0 (delta 0)
 To https://gitexample.info/our-website.git
  * [new branch]      new-homepage -> new-homepage
 ```
+
+^ We've worked on our new homepage for a while, and while doing so we've discovered a bug in some JavaScript. Someone else on the team has offered to help fix the problem, but first we need to get our changes into her copy of the project. To do this, we need to push the `new-homepage` branch from our computer to the server, where our teammate can find and pull from it.
 
 ^ The command we need is `git push <remote> <branch>`. Git wants us to be explicit here, listing exactly which remote we want to push to (`origin`), and which branch we want pushed (`new-homepage`). Git is doing several things on our behalf.
 
@@ -1013,19 +1011,11 @@ git push origin master
 
 ---
 
-## Questions
-
----
-
-## Large File Storage
-
-^ Keeping your repository lean and fast is a difficult and important task. Once you commit a file to your repository, it is part of the repo and removing the file can be very difficult if not impossible. As we've seen, deleting something from our repo is actually a process of creating a new commit that shows that certain files have been removed. This process does not actually delete the history of the files, which means any bulk added to our repository from these files, is still part of the repo.
-
----
-
-### LFS
+## Large File Storage (LFS)
 
 - [GIT LFS](https://git-lfs.github.com)
+
+^ Keeping your repository lean and fast is a difficult and important task. Once you commit a file to your repository, it is part of the repo and removing the file can be very difficult if not impossible. As we've seen, deleting something from our repo is actually a process of creating a new commit that shows that certain files have been removed. This process does not actually delete the history of the files, which means any bulk added to our repository from these files, is still part of the repo.
 
 ^ Git Large File Storage (LFS) replaces large files such as audio samples, videos, datasets, and graphics with text pointers inside Git, while storing the file contents on a remote server like GitHub.com or GitHub Enterprise.
 
@@ -1057,7 +1047,7 @@ git push origin master
 
 ---
 
-## What To Ignore
+![fill](https://www.gitignore.io/img/preview.png)
 
 ^ There are some files and folders that should be totally ignored from your repositories. Use a `.gitignore` file in your repo's root directory to manage files, file types, and directories that should be completely ignored while managing your repository. There are example files listed in the resources page to get you started. **Remember**, once a file is committed to the repo, it is part of the history of the project. Even if it is removed later, it remains part of the history and therefore part of the repository. Be careful and organized when adding new files and folders so that you commit exactly what you want and nothing more.
 

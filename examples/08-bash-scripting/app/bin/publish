@@ -1,0 +1,21 @@
+#!/bin/sh
+
+set -e
+
+cd "$(dirname "$0")/.."
+
+. ./bin/config
+
+echo "${green}==> Building production files...${reset}"
+bin/production
+bin/binary-push
+
+echo "${green}==> Zipping production build...${reset}"
+zip="zipFileName.zip"
+
+cd ./build
+zip -r9 $zip *
+mv $zip ~/Desktop/.
+cd -
+
+open ~/Desktop

@@ -1,5 +1,15 @@
 # Team Rosters
 
+## Summer 2020
+
+### Blue Team
+
+### Red Team
+
+### Green Team
+
+---
+
 ## Summer 2018
 
 ### Alpha Team

@@ -1,0 +1,12 @@
+#!/bin/sh
+
+set -e
+
+cd "$(dirname "$0")/.."
+
+. ./bin/config
+
+bin/setup
+
+echo "${green}==> Development build...${reset}"
+gulp

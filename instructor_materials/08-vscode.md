@@ -1,8 +1,8 @@
 build-lists: true
-footer: IDM 222: Web Authoring II
+footer: IDM T380: Workflow Optimization Techniques
 slidenumbers: true
 autoscale: true
-theme: Next, 1
+theme: Work, 1
 
 # Workflow Optimization Techniques
 
