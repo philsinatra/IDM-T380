@@ -52,6 +52,8 @@
 
 ## Windows
 
+- [Git for Windows](https://gitforwindows.org)
+- [Windows Subsytem for Linux](https://docs.microsoft.com/en-us/windows/wsl/about)
 - [Windows 32 or 64?](https://www.howtogeek.com/howto/21726/how-do-i-know-if-im-running-32-bit-or-64-bit-windows-answers/)
 - [Installing Bash Shell On Windows 10](https://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/)
 - [Run Bash On Ubuntu On Windows](https://blogs.windows.com/buildingapps/2016/03/30/run-bash-on-ubuntu-on-windows/)
