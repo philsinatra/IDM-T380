@@ -66,6 +66,20 @@ MacBook-Pro ~ $ grep 'Drexel University' README.md
 
 ---
 
+## The Shell
+
+- Bash
+- Zsh
+- Fish
+
+^ The terminal is an application the runs your _shell_. The _shell_ is where you actually run commands and see the output, so everything we've been looking at here really is happening in the shell, and we're accessing the shell with a terminal application. The shell can have it's own customization options, regardless of the terminal application you choose to use.
+
+^ There are a number of different shells available with varying customizations, Assuming that you’re on a Mac, your machine will come with a shell called Bash. Bash is a good go-to shell, but there are alternatives that have their own pros and cons. Each of these have great features (plugins, themes, additional customization) you can learn about online. For our purposes, we'll stick to Bash for now.
+
+^ As of macOS Catalina, the default shell has been changed from Bash to Zsh (licensing).
+
+---
+
 ## The Prompt `$`
 
 ^ Once you've opened the terminal, you'll notice that initially you're presented with very little. Most likely a dollar sign and a mostly blank screen. The prompt (usually represented by a dollar sign) is where you enter commands into the terminal. The prompt can be anything and can be totally customized.
@@ -566,20 +580,6 @@ history | grep ls | grep -v history | tail -5
 ^ iTerm2 is my favorite terminal application because it accepts a wealth of customizations. Some of my favorites include.
 
 ^ Let's take a look at some of the preferences in the preference pane.
-
----
-
-## The Shell
-
-- Bash
-- Zsh
-- Fish
-
-^ The terminal is an application the runs your _shell_. The _shell_ is where you actually run commands and see the output, so everything we've been looking at here really is happening in the shell, and we're accessing the shell with a terminal application. The shell can have it's own customization options, regardless of the terminal application you choose to use.
-
-^ There are a number of different shells available with varying customizations, Assuming that you’re on a Mac, your machine will come with a shell called Bash. Bash is a good go-to shell, but there are alternatives that have their own pros and cons. Each of these have great features (plugins, themes, additional customization) you can learn about online. For our purposes, we'll stick to Bash for now.
-
-^ As of macOS Catalina, the default shell has been changed from Bash to Zsh (licensing).
 
 ---
 
