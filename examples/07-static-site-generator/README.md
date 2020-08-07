@@ -3,22 +3,22 @@
 <!-- TOC -->
 
 - [Using Nunjucks](#using-nunjucks)
-	- [Nunjucks + Gulp](#nunjucks--gulp)
-		- [Layout Boilerplate](#layout-boilerplate)
-		- [Index Page](#index-page)
-		- [Setup Gulp File](#setup-gulp-file)
-		- [Adding a Partial](#adding-a-partial)
-		- [Adding a Macro](#adding-a-macro)
-		- [Using The Macro](#using-the-macro)
-		- [Enhancing The Macro](#enhancing-the-macro)
-		- [Working With Data](#working-with-data)
-	- [Nunjucks + Node.js](#nunjucks--nodejs)
-		- [Data Source](#data-source)
-		- [`standard` Template](#standard-template)
-		- [Dependencies](#dependencies)
-		- [Gen Script](#gen-script)
-		- [Looping Through The Screens](#looping-through-the-screens)
-		- [`standard` Template Safe](#standard-template-safe)
+  - [Nunjucks + Gulp](#nunjucks--gulp)
+    - [Layout Boilerplate](#layout-boilerplate)
+    - [Index Page](#index-page)
+    - [Setup Gulp File](#setup-gulp-file)
+    - [Adding a Partial](#adding-a-partial)
+    - [Adding a Macro](#adding-a-macro)
+    - [Using The Macro](#using-the-macro)
+    - [Enhancing The Macro](#enhancing-the-macro)
+    - [Working With Data](#working-with-data)
+  - [Nunjucks + Node.js](#nunjucks--nodejs)
+    - [Data Source](#data-source)
+    - [`standard` Template](#standard-template)
+    - [Dependencies](#dependencies)
+    - [Gen Script](#gen-script)
+    - [Looping Through The Screens](#looping-through-the-screens)
+    - [`standard` Template Safe](#standard-template-safe)
 
 <!-- /TOC -->
 
@@ -104,24 +104,27 @@ Next, let's create a Nunjucks task that does the convertion to static files.
 - ./gulpfile.js
 
 ```javascript
-gulp.task('nunjucks', () => {
+const path = require('path')
+const { src, dest, watch } = require('gulp')
+
+function nunjucks() {
   //
-});
+};
 ```
 
 The `nunjucks-render` plugin allows us to specify a path to the templates with the `path` option.
 
 ```javascript
-gulp.task('nunjucks', () => {
+function nunjucks() {
   // get .html|.njk files in 'pages'
-  return gulp.src('./src/pages/**/*.+(html|njk)')
+  return src(path.join(__dirname, './src/pages/**/*.+(html|njk)'))
     // render template with nunjucks
     .pipe(nunjucksRender({
-      path: ['./src/templates']
+      path: [path.join(__dirname, './src/templates')]
     }))
     // output files to build folder
-    .pipe(gulp.dest('build'));
-});
+    .pipe(dest(path.join(__dirname, './build')))
+};
 ```
 
 Now we should be able to run `gulp nunjucks` from the command line and Gulp will create `index.html` and place it in the _build_ folder.
@@ -303,20 +306,20 @@ const data = require('gulp-data');
 Gulp-data takes in a function that allows you to return a file. We can use Node's _require_ function to get our data file.
 
 ```javascript
-gulp.task('nunjucks', () => {
+function nunjucks() {
   // get .html|.njk files in 'pages'
-  return gulp.src('./src/pages/**/*.+(html|njk)')
+  return src(path.join(__dirname, './src/pages/**/*.+(html|njk)'))
     // add data from JSON
     .pipe(data(() => {
-      return require('./src/data/data.json');
+      return require(path.join(__dirname, './src/data/data.json'))
     }))
     // render template with nunjucks
     .pipe(nunjucksRender({
-      path: ['./src/templates']
+      path: [path.join(__dirname, './src/templates')]
     }))
     // output files to build folder
-    .pipe(gulp.dest('build'));
-});
+    .pipe(dest(path.join(__dirname, './build')))
+};
 ```
 
 ## Nunjucks + Node.js
@@ -499,4 +502,8 @@ const RenderPage = (info) => {
   </main>
 </body>
 </html>
+```
+
+```bash
+node scripts/gen.js
 ```
