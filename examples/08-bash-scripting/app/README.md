@@ -90,7 +90,6 @@ echo "${green}==> Setting up...${reset}"
 bin/clean
 mkdir -p build
 bin/binary-pull
-node scripts/processdata.js
 ```
 
 ## bin/binary-pull

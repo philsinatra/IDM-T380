@@ -1,0 +1,18 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+	<h1>This is the index page</h1>
+
+	{# {% include "partials/_nav.njk" %} #}
+
+	{% import 'macros/macro-nav.njk' as nav %}
+	{{ nav.active('home') }}
+
+	<div class="gallery">
+		{% for image in images %}
+			<div class="gallery__item">
+				<img src="{{ image.src }}" alt="{{ image.alt }}">
+			</div>
+		{% endfor %}
+	</div>
+{% endblock %}

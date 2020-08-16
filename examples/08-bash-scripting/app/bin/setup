@@ -1,7 +1,6 @@
 #!/bin/sh
 
 set -e
-
 cd "$(dirname "$0")/.."
 
 . ./bin/config
@@ -13,4 +12,3 @@ echo "${green}==> Setting up...${reset}"
 bin/clean
 mkdir -p build
 bin/binary-pull
-node scripts/processdata.js
